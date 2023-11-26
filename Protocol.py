@@ -123,7 +123,7 @@ def get_open_dates(start, end):
 
 # 메인 함수
 def main():
-    # 시작 및 종료 날짜 설정
+    # 시작 및 종료 날짜 설정 (변경 가능)
     start_date = datetime.datetime(2012, 6, 1)
     end_date = datetime.datetime(2022, 6, 1)
 
