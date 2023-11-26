@@ -19,6 +19,7 @@ def download_stock_data(ticker, start_date, end_date):
 
 # 거래량이 0인 날짜의 Adjusted Close 값 제거 함수
 # 이 경우에는 해장 날짜가 휴장일일 수 있고 데이터 자체의 오류일 수 있음
+# 어쨋든 하자가 있는 데이터는 맞음
 def remove_zero_volume(data):
     return data['Adj Close'][data['Volume'] != 0]
 
@@ -127,7 +128,7 @@ def main():
     end_date = datetime.datetime(2022, 6, 1)
 
     # 주식 데이터 다운로드
-    ticker = '005930.KS'
+    ticker = '005930.KS' # 삼성 전자 주식 아이디 (변경 가능)
     samsung = download_stock_data(ticker, start_date, end_date)
 
     # 다운로드한 주식 데이터 출력
