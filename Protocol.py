@@ -18,6 +18,7 @@ def download_stock_data(ticker, start_date, end_date):
     return stock_data
 
 # 거래량이 0인 날짜의 Adjusted Close 값 제거 함수
+# 이 경우에는 해장 날짜가 휴장일일 수 있고 데이터 자체의 오류일 수 있음
 def remove_zero_volume(data):
     return data['Adj Close'][data['Volume'] != 0]
 
